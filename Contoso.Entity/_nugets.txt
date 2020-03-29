@@ -1,0 +1,13 @@
+﻿
+PM> Install-Package Microsoft.EntityFrameworkCore -Version 3.0.0
+
+PM> Install-Package Microsoft.EntityFrameworkCore.InMemory -Version 3.0.0
+PM> Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 3.0.0
+PM> Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.0.0
+PM> Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson -Version 3.0.0
+
+
+PM> Install-Package Microsoft.EntityFrameworkCore.Proxies -Version 3.0.0
+
+
+
