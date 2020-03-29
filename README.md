@@ -72,6 +72,7 @@ Please note that Login Screen with JWT Token support provided but not implemente
                <li>Sync and Async calls</li>
                <li>Generic exception handler</li>
                <li>Serilog logging with Console and File sinks</li>
+               <li>nUnit Test</li>
             </ul>
          </div>
          <div class='col-md-3'>
