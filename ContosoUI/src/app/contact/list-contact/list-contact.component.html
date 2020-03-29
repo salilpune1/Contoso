@@ -1,0 +1,28 @@
+<div class="col-md-6 contact-container">
+  <h2 style="margin: auto"> Contact Details</h2>
+  <button class="btn btn-danger" style="width:120px" (click)="addContact()"> Add Contact</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td class="hidden">{{contact.id}}</td>
+      <td>{{contact.firstName}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.phoneNumber}}</td>
+      <td>{{contact.statusDisplay}}</td>
+      <td><button class="btn btn-success" (click)="deleteContact(contact)"> Delete</button>
+        <button class="btn btn-success" (click)="editContact(contact)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

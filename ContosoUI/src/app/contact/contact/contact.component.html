@@ -1,0 +1,56 @@
+<div class="col-md-6 contact-container">
+  <h2 class="text-center" *ngIf="contactId != '0'" >Edit Contact</h2>
+  <h2 class="text-center" *ngIf="contactId === '0'" >Add Contact</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+    </div>
+    <div class="hidden">
+      <input formControlName="rowVersion" placeholder="rowVersion" name="rowVersion" class="form-control" id="rowVersion">
+    </div>
+    <div class="hidden">
+      <input formControlName="status" placeholder="status" name="status" class="form-control" id="status">
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" required> 
+      <div  *ngIf="f.firstName.invalid && (f.firstName.dirty || f.firstName.touched)" class="invalid-feedback d-block">
+        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName" required>
+      <div  *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched)" class="invalid-feedback d-block">
+        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email" required>
+      <div  *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="invalid-feedback d-block">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email is invalid</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" formControlName="phoneNumber" placeholder="phoneNumber" name="phoneNumber" class="form-control" id="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select  formControlName="statusDisplay" placeholder="statusDisplay" name="statusDisplay" class="form-control" id="statusDisplay" (change)="changeStatus($event)">
+        <option *ngFor="let st of statuslist" [ngValue]="st">
+          {{ st }}
+        </option>
+      </select>
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
